@@ -1,0 +1,35 @@
+{
+  "name": "puppy",
+  "version": "0.0.0",
+  "description": "playwright chromium extended with the polkadot{.js} extension",
+  "repository": "github:todo/todo",
+  "engines": {
+    "node": ">=14"
+  },
+  "main": "index.js",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.mjs",
+      "require": "./index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "author": {
+    "name": "chiefbiiko"
+  },
+  "license": "WTFPL",
+  "dependencies": {
+    "@types/node": "*",
+    "@playwright/test": "^1.22.2"
+  },
+  "scripts": {
+    "postinstall": "node ./postinstall.js",
+    "test": "playwright test ./test.ts",
+    "fmt": "npx prettier --no-semi --arrow-parens avoid --print-width 80 --write ./*.{js,ts}"
+  },
+  "polkadotJsExtension": {
+    "localRepo": "./node_modules/puppy/pdot-ext",
+    "version": "v0.44.1"
+  }
+}
