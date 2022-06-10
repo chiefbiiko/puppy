@@ -1,9 +1,8 @@
 import { test as _test, chromium, BrowserContext, Page } from "@playwright/test"
 import { join, resolve } from "path"
-import { tmpdir } from "os"
+import { tmpdir, homedir } from "os"
 import { lstatSync } from "fs"
 import { randomBytes } from "crypto"
-const { polkadotJsExtension } = require("./package.json")
 
 export * from "@playwright/test"
 
@@ -19,9 +18,10 @@ export const BASE_MNEMONIC =
 export const PASSWORD = "sesameopen"
 
 export const PDOT_EXT_BUILD_DIR = resolve(
-  __dirname,
-  polkadotJsExtension.localRepo,
-  "packages/extension/build"
+  join(homedir(), ".polkadot.js-extension"),
+  "packages",
+  "extension",
+  "build"
 )
 
 if (!lstatSync(PDOT_EXT_BUILD_DIR).isDirectory()) {
