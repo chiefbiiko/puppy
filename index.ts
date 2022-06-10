@@ -17,12 +17,14 @@ export const BASE_MNEMONIC =
 
 export const PASSWORD = "sesameopen"
 
-export const PDOT_EXT_BUILD_DIR = resolve(
-  join(homedir(), ".polkadot.js-extension"),
-  "packages",
-  "extension",
-  "build"
-)
+export const PDOT_EXT_BUILD_DIR = resolve('build')
+// join(
+//   homedir(),
+//   ".polkadot.js-extension",
+//   "packages",
+//   "extension",
+//   "build"
+// )
 
 if (!lstatSync(PDOT_EXT_BUILD_DIR).isDirectory()) {
   throw Error(`not a dir '${PDOT_EXT_BUILD_DIR}'`)

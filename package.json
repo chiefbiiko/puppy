@@ -17,6 +17,7 @@
   },
   "scripts": {
     "postinstall": "bash postinstall.sh",
+    "postinstall": "",
     "test": "playwright test ./test.ts",
     "fmt": "npx prettier --no-semi --arrow-parens avoid --print-width 80 --write ./*.{js,ts}"
   },
