@@ -5,6 +5,7 @@ Yet another `puppeteer` derivative. A tiny wrapper around `playwright` amending 
 ## Install
 
 ```bash
+npx playwright install-deps chromium
 npm i todo/puppy
 ```
 
