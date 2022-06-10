@@ -6,22 +6,25 @@
   "engines": {
     "node": ">=14"
   },
-  "main": "index.ts",
+  "main": "index.js",
   "author": {
     "name": "chiefbiiko"
   },
   "license": "WTFPL",
   "dependencies": {
-    "@types/node": "*",
-    "@playwright/test": "^1.22.2"
+    "@playwright/test": "^1.22.2",
+    "@types/node": "*"
   },
   "scripts": {
-    "postinstall": "bash postinstall.sh",
     "postinstall": "",
+    "build": "tsc index.ts",
     "test": "playwright test ./test.ts",
     "fmt": "npx prettier --no-semi --arrow-parens avoid --print-width 80 --write ./*.{js,ts}"
   },
   "polkadotJsExtension": {
     "version": "v0.44.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.3"
   }
 }
